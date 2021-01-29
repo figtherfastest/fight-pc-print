@@ -85,10 +85,6 @@ Print.prototype = {
       var imageURL = canvass[k4].toDataURL('image/png')
       var img = document.createElement('img')
       img.src = imageURL
-
-      // img.setAttribute('style', 'max-width: 100%;')
-      // img.className = 'isNeedRemove'
-      // canvass[k4].parentNode.removeChild(img)
       canvass[k4].parentNode.insertBefore(img, canvass[k4].nextElementSibling)
     }
 
@@ -113,6 +109,7 @@ Print.prototype = {
       _this.toPrint(w)
       setTimeout(function() {
         document.body.removeChild(iframe)
+        window.location.reload()
       }, 100)
     }
   },
@@ -144,6 +141,7 @@ Print.prototype = {
       }
 }
 const MyPlugin = {}
+
 MyPlugin.install = function(Vue, options) {
   Vue.prototype.$print = Print
 }

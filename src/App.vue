@@ -8,7 +8,17 @@
 <script>
 export default {
   name: 'app',
- methods:{
+  mounted() {
+    this.$nextTick(()=>{
+      window.addEventListener('beforeprint',function (){
+        console.log(11111);
+      })
+      window.addEventListener('afterprint',function (){
+        console.log(11111);
+      })
+    })
+  },
+  methods:{
    print(){
      this.$print(this.$refs['pdfDom'])
    }
