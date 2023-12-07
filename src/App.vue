@@ -11,10 +11,10 @@ export default {
   mounted() {
     this.$nextTick(()=>{
       window.addEventListener('beforeprint',function (){
-        console.log(11111);
+        console.log('beforeprint');
       })
       window.addEventListener('afterprint',function (){
-        console.log(11111);
+          console.log('afterprint');
       })
     })
   },
